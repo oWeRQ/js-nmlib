@@ -1,0 +1,18 @@
+{
+  "name": "nmlib",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:oWeRQ/nmlib.js.git"
+  },
+  "author": "Maxim Soldatov",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "webpack": "~1.5.3"
+  }
+}

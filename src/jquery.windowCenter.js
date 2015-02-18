@@ -22,7 +22,7 @@
 		init: function(){
 			this.bindAll('onWindowResize');
 
-			this.options.window = (this.options.window instanceof jQuery) ? this.options.window : $(this.options.window || window);
+			this.options.window = (this.options.window instanceof $) ? this.options.window : $(this.options.window || window);
 
 			this.$el.css({
 				'position': this.options.position
