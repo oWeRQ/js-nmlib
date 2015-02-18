@@ -1,0 +1,91 @@
+.modal-window-lightbox {
+	padding: 0;
+	background: black;
+}
+
+.modal-lightbox {
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	border-radius: 4px;
+	white-space: nowrap;
+}
+.modal-lightbox:before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	height: 100%;
+}
+.modal-prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 100%;
+	font-size: 36px;
+	color: white;
+	text-shadow: 0 1px 1px black;
+	background: rgba(255,255,255,.2);
+	background: linear-gradient(to right, rgba(255,255,255,.5), transparent);
+	cursor: pointer;
+	opacity: 0;
+}
+.modal-prev:before {
+	content: '\2190';
+	display: inline-block;
+	vertical-align: middle;
+}
+.modal-prev:after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	width: 0;
+}
+.modal-prev:hover {
+	opacity: 1;
+}
+.modal-next {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 100%;
+	font-size: 36px;
+	color: white;
+	text-shadow: 0 1px 1px black;
+	background: rgba(255,255,255,.2);
+	background: linear-gradient(to left, rgba(255,255,255,.5), transparent);
+	cursor: pointer;
+	opacity: 0;
+}
+.modal-next:hover {
+	opacity: 1;
+}
+.modal-next:before {
+	content: '\2192';
+	display: inline-block;
+	vertical-align: middle;
+}
+.modal-next:after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	width: 0;
+}
+.modal-image {
+	vertical-align: middle;
+}
+.model-desc {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 4px 20px;
+	color: white;
+	text-shadow: 0 0 4px black;
+	background: rgba(0,0,0,.5);
+	background: linear-gradient(to bottom, transparent, rgba(0,0,0,.5));
+}

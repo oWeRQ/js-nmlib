@@ -1,0 +1,22 @@
+html {
+	font: 13px Arial, sans-serif;
+}
+h2 {
+	margin: 1em 0 .5em;
+	font-size: 18px;
+}
+a {
+	color: #06d;
+	text-decoration: none;
+}
+a:hover {
+	color: #09f;
+	text-decoration: underline;
+}
+ul {
+	margin: .5em 0;
+	padding-left: 16px;
+}
+img {
+	vertical-align: middle;
+}

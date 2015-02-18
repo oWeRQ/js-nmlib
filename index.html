@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NM Lib</title>
+
+	<link rel="stylesheet" href="src/jquery.modalWindow.css">
+	<link rel="stylesheet" href="src/jquery.lightbox.css">
+	<link rel="stylesheet" href="src/demo.css">
+
+	<script src="src/bower_components/requirejs/require.js"></script>
+	<script>
+		require.config({
+			baseUrl: 'src',
+			paths: {
+				jquery: 'bower_components/jquery/dist/jquery.min'
+			}
+		});
+	</script>
+</head>
+<body>
+	<h2>Simple Modal &amp; Custom Overlay</h2>
+	<div class="example">
+		<div id="example1-modal" style="max-width: 600px;">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel dolor lacus. Aliquam luctus eleifend leo, at gravida metus viverra non. Aenean nulla lacus, molestie ut mollis a, accumsan vitae libero. Praesent venenatis posuere risus eget mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce at felis velit. Mauris quis lectus et purus sodales faucibus sit amet a tellus. In placerat mauris quis tortor semper aliquet. Maecenas placerat magna non est ullamcorper ac euismod arcu ornare. Suspendisse eu ipsum ac sapien commodo sagittis.
+			</p>
+			<p>
+				Donec tempus felis quis tellus ultricies molestie. Mauris non nisl et velit hendrerit ultrices. Fusce nec ipsum eros. Morbi non dolor leo, sit amet vulputate nulla. Mauris sed lacus felis, a hendrerit odio. Ut scelerisque dapibus molestie. Donec ac lectus risus, ac vehicula turpis. Sed sit amet pellentesque metus. Proin magna quam, volutpat in volutpat vel, rutrum eu magna. Nullam quis velit augue. Donec sit amet nunc est.
+			</p>
+			<p>
+				Vivamus ut nibh et massa pharetra placerat. Vivamus consectetur tempor turpis. Suspendisse feugiat porttitor pharetra. Sed quis quam erat. Donec vitae lacus eget lorem pulvinar posuere et vel nulla. Cras ligula mauris, mattis id consequat a, luctus eget nunc. Integer accumsan quam in massa mollis at pharetra ipsum aliquam. Maecenas et turpis id leo suscipit pharetra nec in dui. Phasellus suscipit, turpis id scelerisque euismod, odio est molestie eros, nec ornare nibh tortor id erat. Pellentesque eget bibendum odio. Nam a arcu elit. Nam porttitor nisi ac nisl tincidunt eget ultricies nunc dapibus. Etiam scelerisque lectus lectus, vitae porta purus. Phasellus tincidunt vehicula dictum.
+			</p>
+			<p>
+				Nunc nec turpis quis tortor volutpat cursus. Aliquam erat volutpat. Sed in urna pharetra sapien consequat viverra. Aliquam ut hendrerit turpis. Sed suscipit luctus nulla sed facilisis. Vestibulum vestibulum fringilla tortor quis blandit. Etiam ac turpis nulla, vel luctus ipsum. Pellentesque sagittis iaculis turpis in mollis. Donec eu enim ante. Duis risus velit, scelerisque et dictum at, pulvinar et nulla. Nulla eu nulla leo, sed viverra eros. Phasellus lacinia vulputate dui ac sollicitudin. Aenean tempus suscipit mauris, nec placerat arcu luctus non. Proin non nisi tortor, ut iaculis risus. Nulla mollis nisi vitae enim lacinia feugiat.
+			</p>
+			<p>
+				Nullam at orci massa, sed mattis turpis. Nulla lacinia gravida nisl scelerisque feugiat. Morbi nibh urna, tempor sed iaculis quis, venenatis vel ligula. Etiam euismod rutrum vestibulum. Praesent sollicitudin eleifend risus, id vehicula libero porta a. Nullam et libero nisl. Nam accumsan pellentesque rutrum. Fusce facilisis vehicula ornare. Quisque at nisl mi. Fusce faucibus pulvinar sollicitudin. Cras venenatis justo eu diam ultrices posuere. Suspendisse potenti. Donec iaculis congue sollicitudin. Phasellus aliquam fringilla tempus.
+			</p>
+		</div>
+
+		<a href="#" id="show-example1-modal">Example 1</a>
+	</div>
+
+	<h2>Lazy Init</h2>
+	<div class="example">
+		<div style="display: none;">
+			<div id="example2-modal1">Content 1</div>
+			<div id="example2-modal2">Content 2</div>
+			<div id="example2-modal3">Content 3</div>
+		</div>
+
+		<ul>
+			<li><a href="#example2-modal1" class="show-example2-modal">Link 1</a></li>
+			<li><a href="#example2-modal2" class="show-example2-modal">Link 2</a></li>
+			<li><a href="#example2-modal3" class="show-example2-modal">Link 3</a></li>
+		</ul>
+	</div>
+
+	<h2>Html Content</h2>
+	<div class="example">
+		<div style="display: none;">
+			<div id="example3-modal1">Content 1</div>
+			<div id="example3-modal2">Content 2</div>
+			<div id="example3-modal3">Content 3</div>
+		</div>
+
+		<ul>
+			<li><a href="#" class="show-example3-modal" data-content="Content 1">Link 1</a></li>
+			<li><a href="#" class="show-example3-modal" data-content="Content 2">Link 2</a></li>
+			<li><a href="#" class="show-example3-modal" data-content="Content 3">Link 3</a></li>
+		</ul>
+	</div>
+
+	<h2>Lightbox</h2>
+	<div class="example">
+		<div id="example4-list">
+			<a rel="flickr" href="http://farm9.static.flickr.com/8326/8087396190_65dc03b0c5.jpg" title="Цветок"><img src="http://farm9.static.flickr.com/8326/8087396190_65dc03b0c5_s.jpg"></a>
+			<a rel="flickr" href="http://farm9.static.flickr.com/8473/8079231162_8292cc0a11.jpg" title="Одуванчик"><img src="http://farm9.static.flickr.com/8473/8079231162_8292cc0a11_s.jpg"></a>
+			<a rel="flickr" href="http://farm9.static.flickr.com/8190/8085353517_2477941b3f.jpg" title="Девушка в листочках"><img src="http://farm9.static.flickr.com/8190/8085353517_2477941b3f_s.jpg"></a>
+			<a rel="flickr" href="http://farm9.static.flickr.com/8187/8087322304_a8a1daaa3f.jpg" title="Озеро и горы"><img src="http://farm9.static.flickr.com/8187/8087322304_a8a1daaa3f_s.jpg"></a>
+		</div>
+	</div>
+
+	<h2>Lightbox Customize</h2>
+	<div class="example">
+		<div id="example5-list">
+			<a rel="flickr2" href="http://farm9.static.flickr.com/8326/8087396190_65dc03b0c5.jpg" title="Цветок"><img src="http://farm9.static.flickr.com/8326/8087396190_65dc03b0c5_s.jpg"></a>
+			<a rel="flickr2" href="http://farm9.static.flickr.com/8473/8079231162_8292cc0a11.jpg" title="Одуванчик"><img src="http://farm9.static.flickr.com/8473/8079231162_8292cc0a11_s.jpg"></a>
+			<a rel="flickr2" href="http://farm9.static.flickr.com/8190/8085353517_2477941b3f.jpg" title="Девушка в листочках"><img src="http://farm9.static.flickr.com/8190/8085353517_2477941b3f_s.jpg"></a>
+			<a rel="flickr2" href="http://farm9.static.flickr.com/8187/8087322304_a8a1daaa3f.jpg" title="Озеро и горы"><img src="http://farm9.static.flickr.com/8187/8087322304_a8a1daaa3f_s.jpg"></a>
+		</div>
+		<p>
+			<a href="#" id="example5-link" style="display:none">Open last viewed</a>
+		</p>
+	</div>
+
+	<h2>Children Dialogs</h2>
+	<div class="example">
+		<div id="example6-login">
+			<h2>Login</h2>
+			<a href="#example6-signup" class="signup">Signup</a>
+		</div>
+		<div id="example6-signup">
+			<h2>Signup</h2>
+		</div>
+
+		<a href="#" id="example6-login-link">Login</a>
+		<a href="#" id="example6-signup-link">Signup</a>
+	</div>
+
+	<h2>Plugin Example</h2>
+	<div class="example">
+		<div id="example7"></div>
+	</div>
+
+	<h2>Plugin Example Alt</h2>
+	<div class="example">
+		<div id="example8"></div>
+	</div>
+
+	<script src="src/demo.js"></script>
+</body>
+</html>
