@@ -8,7 +8,6 @@
 	height: 100%;
 	background: black;
 	opacity: 0.6;
-	z-index: 200;
 }
 .modal-shim {
 	overflow: auto;

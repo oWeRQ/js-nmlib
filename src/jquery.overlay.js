@@ -7,6 +7,7 @@
 
 	return $plugin('overlay', {
 		defaults: {
+			parent: null,
 			elementClass: 'modal-overlay',
 			initStyles: {
 				opacity: 0
@@ -26,7 +27,7 @@
 			if (this.el === undefined) {
 				this.$el = $('<div>', {
 					'class': this.options.elementClass
-				}).prependTo(document.body);
+				}).prependTo(this.options.parent || document.body);
 
 				this.el = this.$el[0];
 
@@ -35,14 +36,13 @@
 		},
 
 		getDocHeight: function(){
-			var doc = document.documentElement;
+			var doc = this.options.parent[0] || document.documentElement;
 			return Math.max(doc.scrollHeight, doc.clientHeight);
 		},
 
 		resize: function(){
-			this.$el.css({
-				height: this.getDocHeight()
-			});
+			this.$el.css('height', 0)
+			this.$el.css('height', this.getDocHeight());
 		},
 
 		show: function(){

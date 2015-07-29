@@ -56,15 +56,15 @@
 			this.options.window = this.shim;
 			this.shim.appendTo(document.body);
 
-			this.closeButton.add(this.shim).click(this.close);
-
-			this.window.click(function(e){
-				e.stopPropagation();
-			});
+			this.closeButton.click(this.close);
 
 			this.windowCenter = $windowCenter(this.options, this.wrap);
-			if (this.options.overlay)
-				this.overlay = $overlay(this.options.overlay);
+			if (this.options.overlay) {
+				this.overlay = $overlay($.extend({
+					parent: this.shim
+				}, this.options.overlay));
+				this.overlay.$el.click(this.close);
+			}
 		},
 
 		open: function(e){
@@ -78,7 +78,7 @@
 
 			this.container.css({
 				overflow: 'hidden',
-				paddingRight: window.outerWidth-this.container[0].clientWidth
+				paddingRight: window.innerWidth - this.container[0].offsetWidth
 			});
 
 			this.shim.show();
@@ -99,7 +99,8 @@
 			if (!this.isOpen)
 				return;
 
-			this.options.onBeforeClose.call(this);
+			if (this.options.onBeforeClose.call(this) === false)
+				return;
 
 			this.container.css({
 				overflow: '',
