@@ -1,11 +1,17 @@
 var webpack = require('webpack');
 
 module.exports = {
-	entry: './src/demo',
+	entry: {
+		'demo': './src/demo',
+		'jquery.nmlib': './src/jquery.nmlib'
+	},
 	output: {
 		path: __dirname + '/build',
 		publicPath: 'build/',
-		filename: 'demo.js'
+		filename: '[name].js'
+	},
+	externals: {
+		jquery: 'jQuery'
 	},
 	resolve: {
 		modulesDirectories: [

@@ -56,7 +56,7 @@ require(['jquery', 'jquery.lightbox'], function($, $lightbox){
 
 	console.log('test equal object: ', $('#example4-list a:eq(0)').data('lightbox') === $('#example4-list a:eq(1)').data('lightbox'));
 
-	console.log('test instanceof lightbox: ', $('#example4-list a:eq(0)').data('lightbox') instanceof $.lightbox);
+	console.log('test instanceof lightbox: ', $('#example4-list a:eq(0)').data('lightbox') instanceof $lightbox);
 });
 
 /**
