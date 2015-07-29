@@ -6,6 +6,9 @@
 })(function($){
 
 	return $.plugin = function(pluginName, object){
+		var oldPlugin = $[pluginName],
+			oldPluginFn = $.fn[pluginName];
+
 		function Plugin(options, el) {
 			if (!(this instanceof Plugin))
 				return new Plugin(options, el);
@@ -43,7 +46,7 @@
 
 		Plugin.defaults = Plugin.prototype.defaults;
 
-		Plugin.jQueryPlugin = function(method){
+		Plugin.fn = function(method){
 			var args = Array.prototype.slice.call(arguments, 1),
 				options = $.isPlainObject(method) ? method : {},
 				returnValue = this;
@@ -73,9 +76,15 @@
 			return returnValue;
 		};
 
-		$[pluginName] = Plugin;
+		Plugin.noConflict = function(){
+			$[pluginName] = oldPlugin;
+			$.fn[pluginName] = oldPluginFn;
 
-		$.fn[pluginName] = Plugin.jQueryPlugin;
+			return Plugin;
+		};
+
+		$[pluginName] = Plugin;
+		$.fn[pluginName] = Plugin.fn;
 
 		return Plugin;
 	};
